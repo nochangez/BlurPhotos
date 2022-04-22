@@ -5,11 +5,8 @@ from os import listdir
 from random import randint
 from PIL import Image, ImageFilter
 
-# from data.config import path_to_pictures
 
-
-def blur_photos(from_path: str = f"/Users/nochanga/PycharmProjects/EyeOfGodBot/pictures/real_nude/",
-                to_path: str = f"/Users/nochanga/PycharmProjects/EyeOfGodBot/pictures/fake_nude/"):
+def blur_photos(from_path: str = None, to_path: str = None):
     print(f"[all] found {len(listdir(path=from_path))} objects")  # photos count
 
     for image_name in listdir(path=from_path):
@@ -28,4 +25,8 @@ def blur_photos(from_path: str = f"/Users/nochanga/PycharmProjects/EyeOfGodBot/p
             continue
 
 
-blur_photos()  # start blurring
+if __name__ == "__main__":
+    from_path = str(input("[enter] abs path where are photos to blur: "))  # where from to get blurring photos 
+    to_path = str(input("[enter] abs path where to save blurred photos: "))  # where to save blurred photos
+
+    blur_photos(from_path=from_pathm to_path=to_path)  # start blurring
